@@ -1,0 +1,33 @@
+
+# Специфичные файлы для Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.python-version
+
+# Переменные окружения
+.venv
+venv
+.env
+env
+
+# Конфиги
+.idea
+.vscode
+*.lock
+
+# Логи
+*.log
+
+# Изображения
+*.png
+*.jpg
+*.jpeg
+
+# Таблицы
+*.csv
+*.xls
+*.xlsx
