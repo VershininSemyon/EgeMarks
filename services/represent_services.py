@@ -83,7 +83,7 @@ class CsvMarksRepresenter(TablePandasRepresenter):
     @sync_time_log_decorator("Таблица CSV успешно создана!")
     def represent(self, subject: SubjectData) -> None:
         df = self._prepare_data(subject)
-        df.to_excel(f"{subject.title}_marks.xlsx", index=False)
+        df.to_csv(f"{subject.title}_marks.csv", index=False)
 
 
 class ExcelMarksRepresenter(TablePandasRepresenter):
