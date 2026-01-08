@@ -2,7 +2,7 @@
 [project]
 name = "ege-marks"
 version = "0.1.0"
-description = "Парсинг и визуализация шкал перевода баллов ЕГЭЭ
+description = "Парсинг и визуализация шкал перевода баллов ЕГЭ"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
