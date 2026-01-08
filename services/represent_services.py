@@ -93,6 +93,21 @@ class ExcelMarksRepresenter(TablePandasRepresenter):
         df.to_excel(f"{subject.title}_marks.xlsx", index=False)
 
 
+class TextMarksRepresenter(MarksRepresenter):
+    @sync_time_log_decorator("Текстовый файл успешно создан!")
+    def represent(self, subject: SubjectData):
+        with open(
+            f"{subject.title}_marks.txt",
+            mode="w",
+            encoding="utf-8"
+        ) as file:
+            file.write(f"Предмет: {subject.title}\n")
+            file.write("Первичный балл | Вторичный балл\n")
+
+            for mark in subject.marks:
+                file.write(f"{mark.first_mark} | {mark.second_mark}\n")
+
+
 class MarksRepresentComposer:
     def represent(self, subject: SubjectData, representators: Iterable[MarksRepresenter]) -> None:
         for representator in representators:

@@ -6,7 +6,8 @@ from services.data_processors import get_page_content, parse_page_content
 from services.represent_services import (ChartMatplotlibRepresenter,
                                          CsvMarksRepresenter,
                                          ExcelMarksRepresenter,
-                                         MarksRepresentComposer)
+                                         MarksRepresentComposer,
+                                         TextMarksRepresenter)
 
 
 @async_time_log_decorator("Все графики и таблицы созданы!")
@@ -19,7 +20,8 @@ async def main() -> None:
         representators = [
             ChartMatplotlibRepresenter(),
             CsvMarksRepresenter(),
-            ExcelMarksRepresenter()
+            ExcelMarksRepresenter(),
+            TextMarksRepresenter()
         ]
         composer = MarksRepresentComposer()
 
@@ -29,7 +31,7 @@ async def main() -> None:
             composer.represent(subject, representators)
             print('-' * 15)
     except Exception as error:
-        print(error)
+        print(f"Ошибка: {error}")
 
 
 if __name__ == "__main__":
