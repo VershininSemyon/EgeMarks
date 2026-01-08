@@ -45,11 +45,26 @@
 
 ### Установка и запуск:
 #### 1. Клонирование репозитория
+```bash
 git clone https://github.com/VershininSemyon/EgeMarks.git
 cd EgeMarks
+```
 
 #### 2. Запуск программы
+```bash
 uv run main.py
+```
+
+### Запуск через docker:
+#### 1. Сборка контейнера
+```bash
+sudo docker build -t ege-marks .
+```
+
+#### 2. Запуск контейнера
+```bash
+sudo docker run -it ege-marks
+```
 
 ## Результаты работы:
 - После выполнения программы в директории проекта появятся:
